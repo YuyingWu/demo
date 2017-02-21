@@ -1,6 +1,3 @@
-# demo
-Woody's demos
+# 伍酱的Demo页
 
-# release 
-fis3 server start
-fis3 release prod
+基于`React.js`和`webpack.js`的实验室
