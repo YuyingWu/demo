@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>Demo - 伍酱</title>
+        <meta name="description" content="伍酱的demo，记录那些年写下的小东西">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/static/css/common.scss">
+    </head>
+    <body>
+        <div id="app">
+            <component :is="currentView"></component>
+        </div>
+        <script src="/static/js/mod.js"></script>
+        <script type="text/javascript">
+            require(['main/main.js']);
+        </script>
+    </body>
+</html>

@@ -1,35 +1,14 @@
 {
-  "name": "react-static-site-boilerplate",
-  "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "webpack": "webpack --progress --colors",
-    "prod": "webpack -p --progress --colors",
-    "dev": "webpack-dev-server --progress --colors",
-    "start": "npm run dev"
+  "name": "Demo",
+  "version": "0.0.1",
+  "description": "Yuying Wu's Demo",
+  "author": "Yuying Wu",
+  "dependencies": {
+    "fis3-hook-module": "*",
+    "fis3-postpackager-loader": "*",
+    "fis-parser-less": "*"
   },
-  "author": "Brent Jackson",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-core": "^6.7.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2016": "^6.0.10",
-    "babel-preset-react": "^6.5.0",
-    "babel-runtime": "^6.6.1",
-    "basscss": "^6.1.6",
-    "css-loader": "^0.14.4",
-    "cz-conventional-changelog": "^1.2.0",
-    "node-libs-browser": "^0.5.2",
-    "react": "^0.13.3",
-    "react-router": "^0.13.3",
-    "static-site-generator-webpack-plugin": "1.1.2",
-    "webpack": "^1.9.10",
-    "webpack-dev-server": "^1.9.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "script": {
+  	"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   }
 }

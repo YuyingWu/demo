@@ -1,3 +1,2 @@
-# 伍酱的Demo页
-
-基于`React.js`和`webpack.js`的实验室
+# _demo
+基于Vue.js的demo集合页
