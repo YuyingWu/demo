@@ -1,7 +1,15 @@
-@import 'reset.css';
-// @import 'variable';
+@import url(reset.css?__inline);
+@import url(variable.less);
+
 body{
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    background: @background-color;
+    color: @font-color;
+    font-size: 62.5%;
+    a{
+    	color: @font-color;
+    	text-decoration: none;
+    }
 }
 .clearfix:after{
     content: "\0020";
@@ -16,4 +24,18 @@ body{
 }
 .grid-r{
     float: right;
+}
+.wgt-header{
+	background: @light-color;
+	padding: 2em;
+	a{
+		font-size: 1.4em;
+		margin-right: 1.5em;
+		font-weight: 700;
+	}
+	.router-link-active{
+		background: @background-color;
+		border-radius: @border-radius;
+		padding: 1em 2em;
+	}
 }

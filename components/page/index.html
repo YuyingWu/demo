@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
-        <title>Demo - 伍酱</title>
+        <title>Yuying Wu</title>
         <meta name="description" content="伍酱的demo，记录那些年写下的小东西">
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="/static/css/common.scss">
+        <link rel="stylesheet" type="text/css" href="/static/css/common.less">
     </head>
     <body>
         <div id="app">
-            <component :is="currentView"></component>
+            <nav class="wgt-header">
+                <div class="menu-list">
+                    <!-- 使用 router-link 组件来导航. -->
+                    <!-- 通过传入 `to` 属性指定链接. -->
+                    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+                    <router-link to="/home">Me</router-link>
+                    <router-link to="/resume">Resume</router-link>
+                    <router-link to="/blog">Blog</router-link>
+                </div>
+            </nav>
+            <!-- 路由出口 -->
+            <!-- 路由匹配到的组件将渲染在这里 -->
+            <router-view></router-view>
         </div>
+        
         <script src="/static/js/mod.js"></script>
         <script type="text/javascript">
             require(['main/main.js']);

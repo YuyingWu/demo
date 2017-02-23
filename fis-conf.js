@@ -65,7 +65,7 @@ fis.match('::packager', {
         margin: '5'
     })
     
-}).match('**/*.{css,scss}', {
+}).match('**/*.{css,less}', {
     packTo: '/static/pkg/all.css' //css打成一个包
 })
 
