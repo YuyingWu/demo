@@ -1,3 +1,8 @@
+// 设置项目属性
+// fis.set('project.name', 'fis3-base');
+fis.set('project.static', '/static');
+// fis.set('project.files', ['*.html', 'map.json', '/test/*']);
+
 
 fis.hook('module', {
     mode: 'mod',
@@ -6,11 +11,22 @@ fis.hook('module', {
     }
 });
 
+// 开启同名依赖
+fis.match('/components/**', {
+    useSameNameRequire: true
+});
 
-//components下面的所有js资源都是组件化资源
-fis.match("components/**", {
+// ------ 配置components
+fis.match('/components/**', {
+    release: '${project.static}/$&'
+});
+fis.match('/components/**.css', {
     isMod: true,
-    release: '/static/$0'
+    release: '${project.static}/$&'
+});
+fis.match('/components/**.js', {
+    isMod: true,
+    release: '${project.static}/$&'
 });
 
 //doc目录不发布
@@ -69,6 +85,12 @@ fis.match('::packager', {
     packTo: '/static/pkg/all.css' //css打成一个包
 })
 
+fis.media('debug').match('*.{js,css,png}', {
+  useHash: false,
+  useSprite: false,
+  optimizer: null
+})
+
 //生产环境下CSS、JS压缩合并
 //使用方法 fis3 release prod
 fis.media('prod')
@@ -77,6 +99,9 @@ fis.media('prod')
     })
     .match('component_modules/*.js',{
         packTo: '/static/pkg/common.js' 
+    })
+    .match('js/vendor/*.js',{
+        packTo: '/static/pkg/vendor.js' 
     })
     .match('components/**/*.js',{
         packTo: '/static/pkg/app.js'

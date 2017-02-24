@@ -1,8 +1,11 @@
+@import url(static/css/variable.less);
+@font-size: 3em;
 .page-home{
 	margin: 6em auto;
+	text-align: center;
 	h1{
 		text-align: center;
-		font-size: 2.5em;
+		font-size: @font-size;
 		margin-top: 1em;
 	}
 	.avatar{
@@ -11,6 +14,27 @@
 		img{
 			width: 223px;
 			border-radius: 100%;
+		}
+	}
+	.wgt-social{
+		margin-top: 4em;
+		ul{
+			padding-left: 0;
+		}
+		li{
+			margin-right: 4em;
+			display: inline;
+			text-align: center;
+			&:last-child{
+				margin-right: 0;
+			}
+			a{
+				font-size: @font-size;
+				color: @base-darker-color;
+				&:hover{
+					color: @font-color;
+				}
+			}
 		}
 	}
 }

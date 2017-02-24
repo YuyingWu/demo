@@ -10,15 +10,26 @@ var Home = require('components/page/home/home.js');
 var Resume = require('components/page/resume/resume.js');
 
 const routes = [
-  { path: '/home', component: Home },
-  { path: '/resume', component: Resume },
-  { path: '*', component: NotFound }
+  { path: '/home', name: 'home', component: Home },
+  { path: '/resume', name: 'resume', component: Resume },
+  { path: '*', name: 'not-found', component: NotFound }
 ];
 
 const router = new VueRouter({
-	routes
+	routes: routes
 });
 
 const app = new Vue({
-	router
+	router: router,
+	methods: {
+		bodyClass: function(){
+			document.getElementsByTagName('body')[0].className = 'body-' + this.$route.name;
+		}
+	},
+	beforeMount: function(){
+		this.bodyClass();
+	},
+	updated: function(){
+		this.bodyClass();
+	}
 }).$mount('#app');
