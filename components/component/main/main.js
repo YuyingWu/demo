@@ -5,14 +5,15 @@ var VueRouter = require('component_modules/vue-router.js');
 Vue.use(VueRouter);
 
 // 页面逻辑
-const NotFound = { template: '<div>not found</div>' };
+const NotFound = require('components/page/not-found/not-found.js');
 var Home = require('components/page/home/home.js');
 var Resume = require('components/page/resume/resume.js');
 
 const routes = [
-  { path: '/home', name: 'home', component: Home },
-  { path: '/resume', name: 'resume', component: Resume },
-  { path: '*', name: 'not-found', component: NotFound }
+	{ path: '/home', name: 'home', component: Home },
+	{ path: '/resume', name: 'resume', component: Resume },
+	{ path: '/', redirect: '/home' },
+	{ path: '*', redirect: '/home' }
 ];
 
 const router = new VueRouter({
