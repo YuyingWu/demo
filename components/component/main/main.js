@@ -5,7 +5,6 @@ var VueRouter = require('component_modules/vue-router.js');
 Vue.use(VueRouter);
 
 // 页面逻辑
-const NotFound = require('components/page/not-found/not-found.js');
 var Home = require('components/page/home/home.js');
 var Resume = require('components/page/resume/resume.js');
 
