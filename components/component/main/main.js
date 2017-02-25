@@ -8,11 +8,13 @@ Vue.use(VueRouter);
 var Home = require('components/page/home/home.js');
 var Resume = require('components/page/resume/resume.js');
 
+// components
+var Nav = require('components/share/nav/nav.js');
+
 const routes = [
-	{ path: '/home', name: 'home', component: Home },
+	{ path: '/', name: 'home', component: Home },
 	{ path: '/resume', name: 'resume', component: Resume },
-	{ path: '/', redirect: '/home' },
-	{ path: '*', redirect: '/home' }
+	{ path: '*', redirect: '/' }
 ];
 
 const router = new VueRouter({
@@ -20,6 +22,7 @@ const router = new VueRouter({
 });
 
 const app = new Vue({
+	el: '#app',
 	router: router,
 	methods: {
 		bodyClass: function(){
@@ -31,5 +34,8 @@ const app = new Vue({
 	},
 	updated: function(){
 		this.bodyClass();
+	},
+	components: {
+		'c-nav': Nav
 	}
-}).$mount('#app');
+});

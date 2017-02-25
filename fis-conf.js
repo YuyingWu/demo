@@ -30,10 +30,16 @@ fis.match('/components/**.js', {
 });
 
 //doc目录不发布
-fis.match("test/**", {
+fis.match('test/**', {
     release: false
-});
-fis.match("*.md", {
+})
+.match('dist/**', {
+    release: false
+})
+.match('*.md', {
+    release: false
+})
+.match('package.json', {
     release: false
 });
 
@@ -81,8 +87,6 @@ fis.match('::packager', {
         margin: '5'
     })
     
-}).match('**/*.{css,less}', {
-    packTo: '/static/pkg/all.css' //css打成一个包
 })
 
 //生产环境下CSS、JS压缩合并
@@ -99,6 +103,9 @@ fis.media('prod')
     })
     .match('components/**/*.js',{
         packTo: '/static/pkg/app.js'
+    })
+    .match('**/*.{css,less}', {
+        packTo: '/static/pkg/all.css' //css打成一个包
     })
     .match('**.css', {
         optimizer: fis.plugin('clean-css')

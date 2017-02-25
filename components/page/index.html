@@ -22,15 +22,7 @@
 
         <!-- Add your site or application content here -->
         <div id="app" class="app" :class="'app-' + $route.name">
-            <nav class="wgt-header">
-                <div class="menu-list">
-                    <!-- 使用 router-link 组件来导航. -->
-                    <!-- 通过传入 `to` 属性指定链接. -->
-                    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-                    <router-link to="/home">Me</router-link>
-                    <router-link to="/resume">Resume</router-link>
-                </div>
-            </nav>
+            <c-nav></c-nav>
             <!-- 路由出口 -->
             <!-- 路由匹配到的组件将渲染在这里 -->
             <router-view></router-view>

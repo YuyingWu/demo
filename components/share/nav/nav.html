@@ -1,0 +1,7 @@
+<nav class="wgt-header">
+    <div class="menu-list">
+    	<template v-for="item in list">
+    		<router-link :to="item.path" exact>{{ item.title }}</router-link>
+    	</template>
+    </div>
+</nav>

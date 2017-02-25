@@ -1,18 +1,18 @@
 @import url(static/css/variable.less);
-@font-size: 3em;
 .page-home{
 	margin: 6em auto;
 	text-align: center;
 	h1{
 		text-align: center;
-		font-size: @font-size;
 		margin-top: 1em;
 	}
 	.avatar{
 		margin: 0 auto;
 		width: 223px;
 		img{
+			display: inline-block;
 			width: 223px;
+			height: 223px;
 			border-radius: 100%;
 		}
 	}
@@ -29,10 +29,13 @@
 				margin-right: 0;
 			}
 			a{
-				font-size: @font-size;
-				color: @base-darker-color;
+				font-size: @h3-font-size;
+				color: @else-color;
 				&:hover{
 					color: @font-color;
+				}
+				&:visited{
+					color: @else-color;
 				}
 			}
 		}
