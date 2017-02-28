@@ -4,9 +4,10 @@
   "description": "Yuying Wu's Demo",
   "author": "Yuying Wu",
   "dependencies": {
+    "fis-parser-less": "*",
     "fis3-hook-module": "*",
     "fis3-postpackager-loader": "*",
-    "fis-parser-less": "*"
+    "qrious": "^2.2.0"
   },
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"

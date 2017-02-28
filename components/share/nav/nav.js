@@ -8,6 +8,9 @@ module.exports = {
             }, {
                 path: '/resume',
                 title: 'Resume'
+            }, {
+                path: '/lab',
+                title: 'Lab'
             }],
             isShow: true,
             deviceClass: 'desktop'

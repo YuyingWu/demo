@@ -1,0 +1,9 @@
+<section class="page page-qrcode">
+	<h1>QR Code <span class="generator">Generator</span></h1>
+
+	<input type="text" v-model="link" @input="renderQR" />
+
+	<div class="qr-container">
+		<canvas ref="qrContainer"></canvas>
+	</div>
+</section>
