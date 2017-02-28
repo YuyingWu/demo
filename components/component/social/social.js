@@ -15,4 +15,4 @@ module.exports = {
         url: 'https://www.douban.com/people/wuyuying1128/',
         cn: '豆瓣'
     }
-}
+};

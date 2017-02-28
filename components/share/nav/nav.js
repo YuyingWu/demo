@@ -17,13 +17,13 @@ module.exports = {
         }
     },
     methods: {
-        toggleShowValue() {
+        toggleShowValue: function() {
             this.isShow = !this.isShow;
         }
     },
     computed: {
     },
-    created() {
+    created: function() {
         var windowWidth = document.body.clientWidth;
         var mobileBreakpoint = 479;
 

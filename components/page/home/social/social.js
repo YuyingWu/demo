@@ -10,6 +10,8 @@ module.exports = Vue.extend({
     	}
     },
     filters: {
-        toUpperCase: (value) => value.toUpperCase()
+        toUpperCase: function(value){
+            return value.toUpperCase();
+        }
     }
 });
