@@ -1,0 +1,8 @@
+<footer class="wgt-footer">
+	<p>&copy; {{ year }} 伍酱
+		<template v-for="(value, key) in list">
+			<span>|</span>
+			<a :href="value.url">{{ value.cn }}</a>
+		</template>
+	</p>
+</footer>

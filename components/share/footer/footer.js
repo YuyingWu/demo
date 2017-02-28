@@ -1,18 +1,13 @@
+var SocialData = require('social/social.js');
+
 module.exports = {
-    template: __inline('nav.html'),
+    template: __inline('footer.html'),
     data: function(){
         return {
-            list: [{
-                path: '/',
-                title: 'Me'
-            }, {
-                path: '/resume',
-                title: 'Resume'
-            }],
-            isShow: true,
-            deviceClass: 'desktop'
+            year: (new Date()).getFullYear(),
+            list: SocialData
         }
-    },
+    }/*,
     methods: {
         toggleShowValue() {
             this.isShow = !this.isShow;
@@ -25,5 +20,5 @@ module.exports = {
         var mobileBreakpoint = 479;
 
         this.deviceClass = windowWidth > mobileBreakpoint ? 'desktop' : 'mobile';
-    }
+    }*/
 }

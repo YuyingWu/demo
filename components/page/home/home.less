@@ -1,6 +1,8 @@
-@import url(static/css/variable.less);
+/**
+ * @require social/social.less
+ */
 .page-home{
-	margin: 6em auto;
+	margin: 4em auto;
 	text-align: center;
 	h1{
 		text-align: center;
@@ -14,27 +16,6 @@
 			width: 223px;
 			height: 223px;
 			border-radius: 100%;
-		}
-	}
-	.wgt-social{
-		margin-top: 4em;
-		ul{
-			padding-left: 0;
-		}
-		li{
-			margin-right: 4em;
-			display: inline;
-			text-align: center;
-			&:last-child{
-				margin-right: 0;
-			}
-			a{
-				font-size: @h3-font-size;
-				color: @base-darker-color;
-				&:hover{
-					color: @else-color;
-				}
-			}
 		}
 	}
 }

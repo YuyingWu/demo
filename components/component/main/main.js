@@ -10,6 +10,7 @@ var Resume = require('components/page/resume/resume.js');
 
 // components
 var Nav = require('components/share/nav/nav.js');
+var Footer = require('components/share/footer/footer.js');
 
 const routes = [
 	{ path: '/', name: 'home', component: Home },
@@ -36,6 +37,7 @@ const app = new Vue({
 		this.bodyClass();
 	},
 	components: {
-		'c-nav': Nav
+		'c-nav': Nav,
+		'c-footer': Footer
 	}
 });
