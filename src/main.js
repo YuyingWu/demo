@@ -6,6 +6,12 @@ import router from './router';
 
 Vue.config.productionTip = false;
 
+/*eslint-disable */
+router.afterEach(route => {
+  document.getElementsByTagName('body')[0].className = 'body-' + route.name;
+});
+/*eslint-enable */
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

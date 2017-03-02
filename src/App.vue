@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="app" :class="'app-' + $route.name">
+    <c-nav></c-nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Nav from './components/Common/Nav/Nav';
+
 export default {
   name: 'app',
+  components: {
+    'c-nav': Nav,
+  },
 };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+@import "assets/css/app.less";
 </style>
