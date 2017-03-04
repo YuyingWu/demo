@@ -76,6 +76,7 @@
 		}
 		img{
 			height: @itemSize;
+      background-color: @base-darker-color;
 		}
     a,
 		span{

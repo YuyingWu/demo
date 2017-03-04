@@ -7,15 +7,15 @@ import router from './router';
 Vue.config.productionTip = false;
 
 /*eslint-disable */
-router.afterEach(route => {
-  document.getElementsByTagName('body')[0].className = 'body-' + route.name;
-});
-/*eslint-enable */
-
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App },
+  watch: {
+    $route: (to, from) => {
+      document.getElementsByTagName('body')[0].className = 'body-' + to.name;
+    },
+  },
 });
+/*eslint-enable */
