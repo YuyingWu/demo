@@ -32,6 +32,7 @@
 		margin: 0 auto;
 		width: 223px;
 		img{
+      background-color: #C2D6CE;
 			display: inline-block;
 			width: 223px;
 			height: 223px;

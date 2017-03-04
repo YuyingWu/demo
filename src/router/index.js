@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home/Home';
+import Footer from '@/components/Common/Footer/Footer';
 
 Vue.use(Router);
 
@@ -28,12 +29,18 @@ export default new Router({
     {
       path: '/resume',
       name: 'resume',
-      component: Resume,
+      components: {
+        default: Resume,
+        footer: Footer,
+      },
     },
     {
       path: '/lab',
       name: 'lab',
-      component: Lab,
+      components: {
+        default: Lab,
+        footer: Footer,
+      },
     },
     {
       path: '*',

@@ -4,10 +4,18 @@
 
   	<div class="clearfix">
   		<figure class="lab-item" v-for="item in list">
-  			<router-link :to="item.link">
+  			<a :href="item.link" target="_blank">
   				<img :src="item.screenshot"/>
   				<span>{{ item.title }}</span>
-  			</router-link>
+          <span v-if="item.github">
+            <a :href="item.github"
+              target="_blank">
+              <i class="icon iconfont icon-github"></i>
+              传送门
+            </a>
+          </span>
+          <span v-else>&nbsp;</span>
+        </a>
   		</figure>
   	</div>
   </section>
@@ -19,7 +27,13 @@
       return {
         list: [
           {
-            link: '/qrcode',
+            link: 'http://www.wuyuying.com/whv/#/personal-details',
+            screenshot: 'http://cdn.sinacloud.net/demo-static/img/lab/whv.png',
+            title: 'WHV申请表',
+            github: 'https://github.com/YuyingWu/whv',
+          },
+          {
+            link: 'http://www.wuyuying.com/demo/#/qrcode',
             screenshot: 'http://cdn.sinacloud.net/demo-static/img/lab/qrcode.png',
             title: '二维码生成器',
           },
@@ -63,6 +77,7 @@
 		img{
 			height: @itemSize;
 		}
+    a,
 		span{
 			margin-top: 10px;
 			color: @highlight-color;
