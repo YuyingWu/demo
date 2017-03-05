@@ -33,7 +33,7 @@
             github: 'https://github.com/YuyingWu/whv',
           },
           {
-            link: 'http://www.wuyuying.com/demo/#/qrcode',
+            link: 'http://demo.wuyuying.com/lab/qrcode.html',
             screenshot: 'http://cdn.sinacloud.net/demo-static/img/lab/qrcode.png',
             title: '二维码生成器',
           },
