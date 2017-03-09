@@ -1,19 +1,15 @@
 <template>
   <div id="app" class="app" :class="'app-' + $route.name">
-    <c-nav></c-nav>
+
+    <router-view name="header"></router-view>
     <router-view></router-view>
     <router-view name="footer"></router-view>
   </div>
 </template>
 
 <script>
-import Nav from './components/Common/Nav/Nav';
-
 export default {
   name: 'app',
-  components: {
-    'c-nav': Nav,
-  },
 };
 </script>
 

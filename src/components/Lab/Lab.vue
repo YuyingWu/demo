@@ -1,7 +1,7 @@
 <template>
   <section class="page page-lab">
   	<h1>伍酱的实验室</h1>
-
+    
   	<div class="clearfix">
   		<figure class="lab-item" v-for="item in list">
   			<a :href="item.link" target="_blank">
