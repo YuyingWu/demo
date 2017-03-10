@@ -1,58 +1,59 @@
 export default `
 /*
- * "Myself" v1.0.5
- * Robot rights protected under BOT License
- * Authored by pen#PwLXXP
- */
-
-body {
-  background-color: #1a1c24; color: #fff;
-  font-size: 13px; line-height: 1.4;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-
-/* ...
  *
- * ...hello?
+ * 咦，为什么跳到这个页面吖~ 这应该是个错误页喔 ^_^
  *
- * Oh hai guys! It's me, pen#PwLXXP.
- *
- * I'm just sitting here coding away.
- *
- * Sure, you can watch.
- *
- *
- * This CSS is being injected into a DOM style element
- * and written in this pre element simultaneously.
- *
- * Confused? Watch!
+ * 如果有什么问题，欢迎通过各种方式给我留言哈~
  *
  */
 
-pre {
-  position: fixed; width: 48%;
-  top: 30px; bottom: 30px; left: 26%;
-  transition: left 500ms;
-  overflow: auto;
-  background-color: #313744; color: #a6c3d4;
-  border: 1px solid rgba(0,0,0,0.2);
-  padding: 24px 12px;
-  box-sizing: border-box;
-  border-radius: 3px;
-  box-shadow: 0px 4px 0px 2px rgba(0,0,0,0.1);
-}
+下面给你们推荐一首歌好了~
 
+<h2>薛凯琪 - 《给十年后的我》</h2>
 
-/*
- * Syntax highlighting
- * Colors based on Base16 Ocean Dark
- */
+<p>
+这十年来做过的事
 
-pre em:not(.comment) { font-style: normal; }
+能令你无悔 骄傲吗？
 
-.comment       { color: #707e84; }
-.selector      { color: #c66c75; }
-.selector .key { color: #c66c75; }
-.key           { color: #c7ccd4; }
-.value         { color: #d5927b; }
+那时候和你所相信的事
+
+没有被动摇吧？
+
+对象和缘份已出现
+
+成就也还算不赖吗？
+
+旅途上你增添了经历
+
+又有让棱角 消失吗？
+
+软弱吗？
+
+你成熟了 不会失去格调吧？
+
+当初坚持还在吗？
+
+刀锋不会 磨钝了吧？
+
+老练吗？
+
+你情愿变得 聪明而不冲动吗？
+
+但变成 步步停下三思 会累吗？
+
+快乐吗？
+
+你还是记得你跟我约定吧？
+
+区区几场成败里 应该不致 麻木了吧？
+
+快乐吗？
+
+你忘掉理想 只能忙於生活吗？
+
+别太迟 又十年後至想 快乐吗？
+
+</p>
+
 `;

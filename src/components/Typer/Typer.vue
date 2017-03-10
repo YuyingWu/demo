@@ -1,25 +1,34 @@
 <template>
   <section>
-    <pre ref="output" v-html="output"></pre>
+    <pre ref="contentElement" v-html="output" class="content"></pre>
+    <pre ref="styleElement" v-html="styleOutput" class="styles"></pre>
   </section>
 </template>
 
 <script>
 /*eslint-disable */
 import content from './content.js';
+import styleContent from './styles.js';
 
 export default {
   data() {
     return {
       openComment: false,
       output: '',
+      styleOutput: '',
       styleTag: null
     }
   },
   methods: {
-    writeStyleChar: function(which){
+    writeStyleChar: function(which, options){
   		var openComment = this.openComment;
-  		var output = this.output;
+      var options = Object.assign({
+        isCSS: false,
+        isText: true,
+        model: ''
+      }, options);
+
+      var output = this[options.model] || '';
 
   		if(which == '/' && openComment == false){
   			openComment = true;
@@ -37,22 +46,23 @@ export default {
   			output += which;
   		}
 
-      this.output = output;
+      if(options.isText){
+        this[options.model] = output;
+      }
 
-      if(this.styleTag){
+      if(options.isCSS && this.styleTag){
         this.styleTag.innerHTML += which;
       }
   	},
-  	writeStyles: function(message, index){
+  	writeStyles: function(message, index, element, options){
   		var me = this;
-  		var pre = this.$refs.output;
   		var interval = (window.innerWidth <= 578) ? 4 : 16;
 
   		if(index < message.length){
-  			pre.scrollTop = pre.scrollHeight;
-  			me.writeStyleChar(message[index++]);
+  			element.scrollTop = element.scrollHeight;
+  			me.writeStyleChar(message[index++], options);
   			setTimeout(function(){
-  				me.writeStyles(message, index, interval);
+  				me.writeStyles(message, index, element, options);
   			}, interval);
   		}
   	},
@@ -63,9 +73,35 @@ export default {
     this.styleTag.setAttribute('id', 'typer-styles');
     document.getElementById('body').appendChild(this.styleTag);
 
-    // 开始写
-    this.writeStyles(content, 0);
+    // 内容
+    this.writeStyles(content, 0, this.$refs.contentElement, {
+      isCSS: false,
+      isText: true,
+      model: 'output'
+    });
+
+    // 样式
+    this.writeStyles(styleContent, 0, this.$refs.styleElement, {
+      isCSS: true,
+      isText: true,
+      model: 'styleOutput'
+    });
   }
 }
 /*eslint-enable */
 </script>
+
+<style lang="less">
+.styles{
+  opacity: 0;
+  transition: opacity 2s;
+}
+/*
+ * Syntax highlighting
+ * Colors loosely based on Monokai Phoenix
+ */
+.comment       { color: #75715e; }
+.selector      { color: #a6da27; }
+.key           { color: #64d9ef; }
+.value         { color: #fefefe; }
+</style>
